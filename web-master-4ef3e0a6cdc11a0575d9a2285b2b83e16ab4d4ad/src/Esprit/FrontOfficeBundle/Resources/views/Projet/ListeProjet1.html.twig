@@ -1,0 +1,68 @@
+{%extends "EspritFrontOfficeBundle::projetAllLayout.html.twig"%}
+{%block title %}Toutes les idées{%endblock%}
+
+
+{%block container %}
+        <div class="navigation">
+
+    {{ knp_pagination_render(mds) }}
+
+    
+    
+    
+    {% for idee in mds %}
+            
+
+        
+   <div class="grid_3">
+                            <div class="project-short sml-thumb">
+                                <div class="top-project-info">
+                                    <div class="content-info-short clearfix">
+        <a href="#" class="thumb-img">
+                                            <img src="{{ asset('uploads/projets/'~idee.path)}}" id="img"  >
+                                        </a>
+                                        <div class="wrap-short-detail">
+                                            <h3 class="rs acticle-title"><a class="be-fc-orange" href="{{path('esprit_front_office_detail',{'id':idee.id})}}">{{idee.titre}}</a></h3>
+                                            <p class="rs tiny-desc">Type : <a href="{{path('esprit_application_type_idee',{'type':idee.type})}}" class="fw-b fc-gray be-fc-orange">{{idee.type}}</a></p>
+                                            <p class="rs title-description">{{idee.description}}</p>
+                                            <p class="rs project-location">
+                                               Projet proposé par <br>{% for user in users %}
+                                               <span class="val">{% if idee.idUser.id==user.id %} -- {{user.username}} -- {%endif%}</span>
+                                            {% endfor %}  
+                                                
+                                               
+                                            </p>
+                                        </div>
+        
+        </div>
+                                </div>
+                                <div class="bottom-project-info clearfix">
+                                    
+                                        
+                                    <div class="group-fee clearfix">
+                                        <div class="fee-item">
+                                            <h4>Canaouite : {{idee.canaouite}}</h4>
+                                            <center>
+                                            <a href="{{path('esprit_application_funding',{'idprojet':idee.id})}}"><h2>Financer</h2></a>
+                                            </center>
+                                        </div>
+                                        <div class="sep"></div>
+                                        
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+      
+        
+        
+                                              
+    {% endfor %}
+    
+</div>
+    
+    {%endblock%}
+
+

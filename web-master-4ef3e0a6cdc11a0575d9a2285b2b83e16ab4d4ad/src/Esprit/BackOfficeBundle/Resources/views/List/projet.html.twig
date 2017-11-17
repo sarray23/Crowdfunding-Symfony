@@ -1,0 +1,25 @@
+{# empty Twig template #}
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+ <center>
+
+<h1> La liste des projets  </h1>
+{% for m in mds%}
+    <fieldset style=" width: 320 ;"> 
+         
+     <legend>  <b> ID :  </b> {{m.id}} </legend>
+     <b> titre :  </b> {{m.titre}} <br>
+     <b> budget en DT:  </b> {{m.budget}} <br>
+            <b> Etat :  </b> {{m.etat}}
+            <br> <br> 
+            
+            <td><a href="{{path('esprit_back_office_sup_projet', {'id':m.id})}}">Supprimer</a>
+              
+            <a href="{{path('esprit_back_office_refuser_projet',{'id' : m.id})}}"> refuser </a>
+               <a href="{{path('esprit_back_office_accepter_projet',{'id' : m.id})}}"> valider </a>
+         </fieldset>
+              <br>
+           {% endfor %}  
+           
+           {%endblock  %}{# empty Twig template #}
+{# empty Twig template #}

@@ -1,0 +1,99 @@
+{% extends "EspritFrontOfficeBundle::layout1.html.twig" %}
+{%block content %}
+
+
+    <form method='POST'>
+
+        <div class="project-tab-detail tabbable accordion" style="position:relative;
+             top:20px;
+             left:+90px ">
+            <ul class="nav nav-tabs clearfix" >
+                <li class="active"><a href="#"><h3 class="rs alternate-tab accordion-label" 
+                                                   > Probleme</h3></a></li>
+            </ul>
+            <div class="tab-content">
+                <div>
+                    <h3 class="rs alternate-tab accordion-label"></h3>
+                    <div class="tab-pane accordion-content active" style="width: 50%">
+                        <div class="form form-profile">
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Titre:</label>
+                                <div class="val">
+
+                                    {{ form_widget(f.titre, { 'attr' : { 'class': 'txt' } } )  }}
+
+                                </div>
+                            </div>
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Description : </label>
+                                <div class="val">
+
+                                    {{form_widget (f.description,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div>    
+
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Type : </label>
+                                <div class="val">
+
+                                    {{form_widget (f.type,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div> 
+
+                                    <div class="wrap-btn-submit rs ta-r " >
+                               
+                                    {{form_widget (f.valider,{'attr':{'class' : 'btn btn-red btn-submit-all'}  }) }}
+                                    {{ form_row(f._token) }}
+                          
+                            </div>     
+
+
+
+
+                        </div>      
+                    </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <br>
+                <br>
+
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</form>
+{%endblock%}

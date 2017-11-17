@@ -1,0 +1,8 @@
+services:
+#    esprit_front_office.example:
+#        class: Esprit\FrontOfficeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+services:
+    myEncode:
+        class: Acme\TestBundle\Service\myEncode

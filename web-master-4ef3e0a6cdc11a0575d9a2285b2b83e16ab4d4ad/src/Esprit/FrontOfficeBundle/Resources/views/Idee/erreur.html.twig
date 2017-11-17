@@ -1,0 +1,51 @@
+{%extends "EspritFrontOfficeBundle::ideeAllLayout.html.twig"%}
+{% block login %}
+    
+{% trans_default_domain 'FOSUserBundle' %}
+{% if error %}
+    {{ error.messageKey|trans(error.messageData, 'security') }}
+{% endif %}
+
+     <div class="grid_4">
+            <div class="form login-form">
+               
+              <form action="{{ path("fos_user_security_check") }}" method="post">
+                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                   
+                    <h3 class="rs title-form">Login</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">avez vous déja un compte ?</h4>
+                        <p class="rs">SVP log in pour continuer.</p>
+                        <div class="form-action">
+                            <label for="txt_email_login">
+                             <input  class="txt fill-width"  placeholder="taper votre username" type="text" id="username" name="_username"  required="required" />   
+                              </label>
+                               <label for="txt_password_login">
+                                <input  class="txt fill-width"  placeholder="taper votre password"  type="password" id="password" name="_password" required="required"/>
+                            </label>
+                        <label for="chk_remember" class="rs pb20 clearfix">
+                                <input  type="checkbox" class="chk-remember"    id="remember_me" name="_remember_me" value="on"/>
+                                <span class="lbl-remember">se seviendre de moi </span>
+                            </label>        
+
+  <p class="rs ta-c pb10">
+                                <button class="btn btn-red btn-submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">Login</button>
+                            </p>
+    
+ <p class="rs ta-c">
+                                <a href="{{path('fos_user_resetting_request')}}" class="fc-orange">Mot de passe oublié</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    
+
+   
+
+{% endblock login %}
+
+{%block container %}
+Erreur D'ajout{%endblock%}

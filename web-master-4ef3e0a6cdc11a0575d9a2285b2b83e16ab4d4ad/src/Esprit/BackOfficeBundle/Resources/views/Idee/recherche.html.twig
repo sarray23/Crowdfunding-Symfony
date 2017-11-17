@@ -1,0 +1,13 @@
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+<center><h1><a href="{{path('esprit_back_office_idee_general')}}">Accueil des idées</a></h1></center>
+        <center>
+
+<h1>Recherche Idée de projet par son titre</h1>
+<form method="POST">
+    Titre du projet : <input type="text" name="titre">
+    <input type="submit" value="rechercher">
+</form>
+        </center>
+
+{%endblock%}

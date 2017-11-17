@@ -1,0 +1,50 @@
+{%extends "EspritApplicationBundle::layout.html.twig"%}
+{%block container %}
+    <center><h1><a href="{{path('esprit_application_idee_general')}}">Accueil des idées</a></h1></center>
+
+<center><h1>Liste des projets</h1>
+
+   <a href="{{path('esprit_application_tri_idee')}}">Trier la Liste des idées</a><br>
+        <a href="{{path('esprit_application_rechercher_idee')}}">Chercher une idée</a>
+
+</center>
+
+        <center>
+<table  id="tableau" border="1">
+    <thead>
+    <tr>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Modifier</th>
+       
+    </tr>
+     </thead>
+  <tfoot>
+    <tr>
+      <td colspan="5">La liste de vos idées</td>
+    </tr>
+  </tfoot>
+    <tbody>
+
+    {% for idee in idees %}
+    <tr>
+        <td>{{idee.titre}}</td>
+        <td>{{idee.description}}</td>
+        <td>{{idee.type}}</td>
+      
+        <td><a href="{{path('esprit_application_delete_idee', {'id':idee.id})}}">Supprimer</a></td>
+        <td><a href="{{path('esprit_application_update_idee',{'id':idee.id})}}">Modifier</a></td>
+        
+        
+    </tr>
+    {% endfor %}
+      </tbody>
+
+</table>
+        </center>
+
+    {%endblock%}
+
+

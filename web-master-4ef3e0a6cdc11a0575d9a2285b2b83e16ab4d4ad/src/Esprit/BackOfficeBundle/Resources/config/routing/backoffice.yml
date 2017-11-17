@@ -1,0 +1,9 @@
+
+
+
+
+esprit_backofficebundle_home:
+    pattern: /
+    defaults: { _controller: "EspritBackOfficeBundle:Default:index" }
+    requirements:
+        _method: GET

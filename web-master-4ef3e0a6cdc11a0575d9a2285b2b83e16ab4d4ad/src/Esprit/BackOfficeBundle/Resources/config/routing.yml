@@ -1,0 +1,158 @@
+esprit_back_office_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritBackOfficeBundle:Default:index }
+    
+    
+    
+    
+# SECURITY
+esprit_back_office_security:
+    resource: "@EspritBackOfficeBundle/Resources/config/routing/security.yml"
+
+# BACKOFFICE
+esprit_back_office_bo:
+    resource: "@EspritBackOfficeBundle/Resources/config/routing/backoffice.yml"
+    
+    
+esprit_back_office_list:
+    path:     /list
+    defaults: { _controller: EspritBackOfficeBundle:User:list }
+
+esprit_back_office_stat:
+    path:     /stat
+    defaults: { _controller: EspritBackOfficeBundle:Statistic:chart }
+    
+    
+esprit_back_office_stat_idee:
+    path:     /statidee
+    defaults: { _controller: EspritBackOfficeBundle:Statistic:chartt }   
+
+esprit_back_office_stat_vote:
+    path:     /statvote
+    defaults: { _controller: EspritBackOfficeBundle:Statistic:chartvote }   
+   
+esprit_back_office_sup:
+    path:     /sup/{id}
+    defaults: { _controller: EspritBackOfficeBundle:User:delete }
+    
+esprit_back_office_list_idee:
+    path:     /idee
+    defaults: { _controller: EspritBackOfficeBundle:Idee2:list }
+    
+esprit_back_office_edit_idee:
+    path:     /editidee/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:updateBack }
+
+esprit_back_office_desc_idee:
+    path:     /descidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:dscBack }
+
+esprit_back_office_asc_idee:
+    path:     /ascidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:ascBack }
+    
+esprit_back_office_accepter:
+    path:     /accepter/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Idee2:accepter }
+    
+esprit_back_office_refuser:
+    path:     /refuser/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Idee2:refuser }
+    
+    
+esprit_back_office_block:
+    path:     /block/{id}
+    defaults: { _controller: EspritBackOfficeBundle:User:block }
+    
+esprit_back_office_activer:
+    path:     /activer/{id}
+    defaults: { _controller: EspritBackOfficeBundle:User:activer }
+
+esprit_back_office_sup_idee:
+    path:     /supidee/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Idee2:delete }
+    
+esprit_back_office_list_projet:
+    path:     /projet
+    defaults: { _controller: EspritBackOfficeBundle:Projet:list }
+    
+esprit_back_office_accepter_projet:
+    path:     /accepterprojet/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Projet:accepter }
+
+
+
+esprit_back_office_refuser_projet:
+    path:     /refuserprojet/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Projet:refuser }
+    
+esprit_back_office_sup_projet:
+    path:     /supprojet/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Projet:delete }
+    
+    
+    
+    
+    
+#Statistiques
+esprit_application_stat:
+    path:     /statistiques/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:start}
+
+esprit_application_statLine:
+    path:     /statline/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:lineChar}
+
+esprit_application_statUg:
+    path:     /statug/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:unifiedGraph}
+esprit_application_statbar:
+    path:     /statBar/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:barChart}
+esprit_application_stathisto:
+    path:     /stathisto/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:chartHistogramme}
+esprit_application_statPie:
+    path:     /statPie/
+    defaults: { _controller: EspritFrontOfficeBundle:Stat:chartPie}
+   
+   
+   
+
+esprit_application_listCompetences:
+    path:     /competences/
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:liste }
+    
+
+esprit_application_update_competence:
+    path:     /updateComp/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:update }
+    
+    
+esprit_application_delete_competence:
+    path:     /deleteComp/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:delete }  
+    
+    
+esprit_application_ajout_competence:
+    path:     /addComp/
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:ajout }  
+    
+    
+    
+
+# reclamation (ahmed)    
+esprit_back_office_list_reclamation:
+    path:     /listrec
+    defaults: { _controller: EspritBackOfficeBundle:Reclamation2:list }
+
+esprit_back_office_accepter_reclamation:
+    path:     /accepterrec/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Reclamation2:accepter }
+
+
+esprit_back_office_supprimer_reclamation:
+    path:     /supprimerrec/{id}
+    defaults: { _controller: EspritBackOfficeBundle:Reclamation2:supprimer }
+
+

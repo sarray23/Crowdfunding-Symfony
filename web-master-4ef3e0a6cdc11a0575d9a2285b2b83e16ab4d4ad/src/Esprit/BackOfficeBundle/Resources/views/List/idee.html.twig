@@ -1,0 +1,37 @@
+{# empty Twig template #}
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+ <center>
+
+<h1> La liste des idées  </h1>
+
+<a href="{{path('esprit_back_office_desc_idee')}}"><h2>Les plus notées</h2></a><a href="{{path('esprit_back_office_asc_idee')}}"><h2>Les moins notées</h2></a>
+
+<table  class="features-table">
+    <tr> 
+    <center>
+        
+    <th> <center>Id</center></th>
+    <th> <center>Titre</center></th>
+<th><center>Description</center></th>
+        
+<th><center>Suprimer</center></th>
+<th><center>Modifier</center></th>
+    </center>
+    </tr>
+    {% for m in mds %}
+    <tr>
+       
+        <td>{{m.id}}</td>
+        <td><h5>{{m.titre}}</h5></td>
+        <td >{{m.description}}</td>
+      
+        <td><a href="{{path('esprit_back_office_sup_idee', {'id':m.id})}}"><img width="40" height="40"alt="" src="{{asset('images/sup.png')}}" alt="$TITLE"/> </a></td>
+        <td>    <a  href="{{path('esprit_back_office_edit_idee', {'id':m.id})}}"> <img width="40" height="40"alt="" src="{{asset('images/modif.png')}}" alt="$TITLE"/></a></td>
+        
+        
+    </tr>
+   
+    {% endfor %}
+    
+     {%endblock  %}

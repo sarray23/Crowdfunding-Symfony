@@ -1,0 +1,4 @@
+services:
+#    esprit_back_office.example:
+#        class: Esprit\BackOfficeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

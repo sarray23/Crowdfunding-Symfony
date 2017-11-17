@@ -1,0 +1,19 @@
+
+
+
+
+
+
+esprit_back_office_security_login:
+    path:     /connect
+    defaults: { _controller: EspritBackOfficeBundle:Security:login }
+
+esprit_back_office_security_check:
+    path:     /login-check
+    defaults: { _controller: EspritBackOfficeBundle:Security:check }
+    requirements:
+        _method: POST
+
+esprit_back_office_security_logout:
+    path:     /logout
+    defaults: { _controller: EspritBackOfficeBundle:Security:logout }

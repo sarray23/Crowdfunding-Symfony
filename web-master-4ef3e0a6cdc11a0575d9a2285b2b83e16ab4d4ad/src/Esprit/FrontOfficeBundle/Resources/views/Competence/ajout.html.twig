@@ -1,0 +1,27 @@
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+
+    <center>
+
+        <h1> Ajout d'une Compétence</h1> <br>
+
+
+        <form method="POST">
+            <table class="features-table">
+                <tr>
+                    <td>Libellé</td><td>{{form_widget(form.libelleCompetence)}}</td>
+                </tr>
+                <tr>
+                    <td>Catégorie</td><td>{{form_widget(form.categorie)}}</td>
+                </tr>
+                </table>
+                    {{form_widget (form.enregistrer,{'attr':{'class' : 'btn btn-red btn-submit-all'}  }) }}
+                    {{ form_row(form._token) }}
+                    
+                  <!--  <input type="reset" value="retour">-->
+                  <a class="btn btn-red btn-submit-all" href ="{{path('esprit_application_listCompetences')}}">Retour </a>
+                  
+                    </form>
+                    </center>
+
+                {%endblock%}

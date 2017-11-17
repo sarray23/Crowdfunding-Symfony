@@ -1,0 +1,83 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+   <div class="layout-2cols">
+        <div class="content grid_8">
+            <div class="project-detail">
+                <div class="project-tab-detail tabbable accordion">
+                    <ul class="nav nav-tabs clearfix">
+                      <li class="active"><a href="#">Mon profile </a></li>
+                    
+                   
+                    
+                    </ul>
+                    <div class="tab-content">
+                        <div>
+                            <h3 class="rs alternate-tab accordion-label">Profile</h3>
+                            <div class="tab-pane accordion-content active">
+                                <div class="form form-profile">
+                                    <form action="#">
+                                        
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}<img src ="{{asset('uploads/users/'~app.user.path)}} "  width="130" height="130"alt=""  > {% endif %}
+                                       <br> <br><br>
+                                       <div class="row-item clearfix">
+                                            <label class="lbl" for="txt_name1">Username:</label>
+                                            <div class="val">
+                                    {{ form_widget(form.username, { 'attr': {'class': 'txt', 'placeholder': 'form.username'|trans } }) }}
+       <p class="rs description-input">Votre username est affiché dans votre profil.</p>
+                                            </div>
+                                        </div>
+
+<div class="row-item clearfix">
+                                            <label class="lbl" for="txt_name1">Email:</label>
+                                            <div class="val">
+                                               
+                                              {{ form_widget(form.email, { 'attr': {'class': 'txt', 'placeholder': 'form.username'|trans } }) }}
+                                                
+                                            </div>
+                                        </div>    
+                                              <div class="row-item clearfix">
+                                            <label class="lbl" for="txt_name1">Photo:</label>
+                                            <div class="val">
+                                               
+                                              {{ form_widget(form.file, { 'attr': {'class': 'txt', 'placeholder': 'form.username'|trans } }) }}
+                                                
+                                            </div>
+                                        </div>   
+                                              <div class="row-item clearfix">
+                                            <label class="lbl" for="txt_name1">Date de naissance:</label>
+                                            <div class="val">
+                                               
+                                              {{ form_widget(form.age, { 'attr': {'class': 'txt', 'placeholder': 'form.username'|trans } }) }}
+                                                
+                                            </div>
+                                        </div>   
+                                               <div class="row-item clearfix">
+                                          <label class="lbl" for="txt_name1">Mot de passe actuelle</label>
+                                            <div class="val">
+                                             
+                                              {{ form_widget(form.current_password)}}
+                                             
+                                            </div>
+                                        </div>   
+                                              
+                                              <center> <h2> <a href="{{path('esprit_application_ProfilExpert')}}">Ajouter des compétences</a>    </h2>  </center> 
+                                              <center><h2><a href="{{path('fos_user_change_password')}}"  > Changer votre mot de passe</a></h2></center>
+
+    <div>
+       <p class="wrap-btn-submit rs ta-r">
+                                        <center><input type="submit" value="{{ 'Modifier'|trans }}" class="btn btn-red btn-submit-all" />
+                                            
+  
+</form>
+                                </div>
+                                </div>
+                        </div>
+                       
+                       
+                  
+                        </div>
+                      </div>
+            {{ form_end(form)}}
+                                 
+            

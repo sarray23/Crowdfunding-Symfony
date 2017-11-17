@@ -1,0 +1,13 @@
+{% extends "EspritFrontOfficeBundle::layout1.html.twig" %}
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block content %}
+
+
+    <h1>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h1>
+    {% if targetUrl %}
+    <h1><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></h1>
+    {% endif %}
+
+{% endblock content %}

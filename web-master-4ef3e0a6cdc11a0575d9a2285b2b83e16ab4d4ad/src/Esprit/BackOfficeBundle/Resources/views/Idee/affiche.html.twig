@@ -1,0 +1,41 @@
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+<center><h1><a href="{{path('esprit_back_office_idee_general')}}">Accueil des idées</a></h1></center>
+
+<center><h1>Liste des Idées de projet</h1>
+
+   <a href="{{path('esprit_back_office_tri_idee')}}">Trier la Liste des idées</a><br>
+        <a href="{{path('esprit_back_office_rechercher_idee')}}">Chercher une idée</a>
+
+</center>
+
+        <center>
+
+<table border="1" >
+    <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Supprimer</th>
+        <th>Modifier</th>
+       
+    </tr>
+    {% for idee in idees %}
+    <tr>
+        <td>{{idee.titre}}</td>
+        <td>{{idee.description}}</td>
+        <td>{{idee.type}}</td>
+      
+        <td><a href="{{path('esprit_back_office_delete_idee', {'id':idee.id})}}">Supprimer</a></td>
+        <td><a href="{{path('esprit_back_office_update_idee',{'id':idee.id})}}">Modifier</a></td>
+        
+        
+    </tr>
+    {% endfor %}
+</table>
+        </center>
+
+
+    {%endblock%}
+
+

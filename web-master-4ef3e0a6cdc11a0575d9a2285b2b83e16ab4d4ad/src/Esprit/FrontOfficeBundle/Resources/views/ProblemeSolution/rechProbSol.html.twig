@@ -1,0 +1,77 @@
+{% extends "EspritFrontOfficeBundle::layout1.html.twig" %}
+{%block content %}
+
+<div class="container_12">
+                <div class="grid_12">
+                    <h3 class="common-title">Liste des problèmes à consulter</h3>   
+                    <div class="form-search">
+                        <form method="POST">
+
+                            <label for="sys_txt_keyword">
+                                
+                                <input id="sys_txt_keyword" class="txt-keyword" name="aaa" type="text" placeholder="Search projects">
+                            </label>
+                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
+                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
+                        </form>
+                    </div>
+
+                                                  
+                    
+                    
+                </div>
+                <div class="clear"></div>
+                <div class="nav-item grid_4">
+                    <h3 class="rs title">&nbsp;</h3>
+                </div>
+              <div class="nav-item grid_4 ta-c">
+                    <h3 class="rs title">&nbsp;</h3>
+              </div>
+                <div class="clear">
+                    
+                    
+                </div>
+              
+                
+            </div>
+    
+
+  
+    {%for m in prb %}
+                    <div class="layout-1cols-ceneter">
+                        <div class="content grid_8">
+                            <div class="project-short">
+                                <div class="top-project-info">
+                                    <div class="content-info-short clearfix">
+                                        <h3 class="rs acticle-title"><br><a class="be-fc-orange" href="#">Titre : </a>{{ m.titre }}</h3><br>
+                                            
+                                            <h3><p class="rs title-description">Description : {{ m.description }} </p></h3><br>
+                                            <h3><a href="#" class="rs title-description">Type : {{ m.type }} </a></h3>
+                                            <p class="rs tiny-desc">by 
+                                                
+                                               
+                                                
+                                                
+                                                
+                                                <a href="#" class="fw-b fc-gray be-fc-orange">{{ m.idUtilisateur.username }}</a> in <span class="fw-b fc-gray">{{ m.datePost|date('d-m-y') }}</span></p>
+                                      <div class="wrap-short-detail">
+
+                                      </div>
+                                        <p class="rs clearfix comment-view">
+
+                                            <span class="sep">|</span>
+                                            <a href="{{path('esprit_application_SingleProb',{'id' : m.id}) }}"class="btn"> consulter</a>
+                                        </p>
+                                    </div>
+                                </div><!--end: .top-project-info -->
+                            </div>
+                        </div>
+                                        
+                    </div>
+        
+     
+        
+        
+        
+        {%endfor%}
+{%endblock%}

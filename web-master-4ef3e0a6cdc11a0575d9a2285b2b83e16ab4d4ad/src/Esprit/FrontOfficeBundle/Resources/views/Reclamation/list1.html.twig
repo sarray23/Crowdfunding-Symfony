@@ -1,0 +1,23 @@
+{%extends "EspritFrontOfficeBundle::layout1.html.twig"%}
+{%block content %}
+    
+    
+<div class="day-news">
+        
+        <div class="layout-1cols-ceneter">
+            <div class="content grid_8">
+                <div class="project-short">
+                    <div class="top-project-info">
+                        <div class="content-info-short clearfix">
+                            <center><strong>Votre réclamation a été traitée par l'administrateur, vous ne pouvez pas la modifier!</strong></center>
+                            <center><strong>Veuillez ajouter une autre réclamation si vous avez une détaille à rectifier.</strong></center>
+                        </div><br>
+                        <a href="{{path('esprit_ajout_reclamation')}}" class="btn btn-red btn-submit-all" >Retour</a>
+                    </div><!--end: .top-project-info -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+{%endblock%}

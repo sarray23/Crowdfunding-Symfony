@@ -1,0 +1,27 @@
+{%extends "EspritFrontOfficeBundle::oneIdee.html.twig"%}
+{%block titre %} {{idee.titre}} {%endblock%}
+{%block image %}<img class="img-desc" src="{{asset('uploads/idee/'~idee.path)}}" id="img1">{%endblock%}
+{%block imgp %}<img src="{{asset('uploads/users/'~user.path)}}" id="imgp" alt="$USER_NAME"/>{%endblock%}
+{%block username %} {{user.username}} {%endblock%}
+{%block email %} {{user.email}} {%endblock%}
+{%block tt %} {{idee.titre}} {%endblock%}
+{%block contacter %}{% if is_granted('ROLE_USER') %}
+ <a class="btn btn-red" href="{{path('esprit_application_post_expert',{'id':idee.id})}}">Postuler</a>{%endif%} {%endblock%}
+
+
+{%block container %}{{idee.description}}
+{% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : idee.id*10000} %}
+{%endblock%}
+
+
+{%block note %} {% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : user.id } %}{%endblock%}
+
+{%block type %}{{idee.type}}{%endblock%}
+    
+{% set myVal = 0 %}
+{% for n in nbr %}
+     {% set myVal = myVal + 1 %}
+{%endfor%}
+
+{%block nombre %} {{myVal}} {%endblock%}
+

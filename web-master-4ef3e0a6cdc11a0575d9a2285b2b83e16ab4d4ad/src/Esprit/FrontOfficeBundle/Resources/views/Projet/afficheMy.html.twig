@@ -1,0 +1,65 @@
+{%extends "EspritFrontOfficeBundle::projetAllLayout.html.twig"%}
+{%block title %}Mes projets{%endblock%}
+
+
+{%block container %}
+
+        <div class="navigation">
+
+    {{ knp_pagination_render(entities) }}
+
+    
+    
+    
+    {% for idee in entities %}
+        
+        
+   <div class="grid_3">
+                            <div class="project-short sml-thumb">
+                                <div class="top-project-info">
+                                    <div class="content-info-short clearfix">
+        <a href="#" class="thumb-img">
+                                            <img src="{{ asset('uploads/projets/'~idee.path)}}" id="img"  >
+                                        </a>
+                                        <div class="wrap-short-detail">
+                                            <h3 class="rs acticle-title"><a class="be-fc-orange" href="{{path('esprit_application_oneidee_idee',{'id':idee.id})}}">{{idee.titre}}</a></h3>
+                                            <p class="rs tiny-desc">Type : <a href="#" class="fw-b fc-gray be-fc-orange">{{idee.type}}</a></p>
+                                            <p class="rs title-description">{{idee.description}}</p>
+                                            <p class="rs project-location">
+                                                <i class="icon iLocation"></i>
+                                                New York, NY
+                                            </p>
+                                        </div>
+        
+        </div>
+                                </div>
+                                <div class="bottom-project-info clearfix">
+                                    
+                                        
+                                    
+                                    <div class="group-fee clearfix">
+                                        <div class="fee-item">
+                                           
+                                        
+                                            <a href="{{path('esprit_front_office_delete', {'id':idee.id})}}">Supprimer</a></p>
+                                            <span class="val">
+                                                <a href="{{path('esprit_front_office_update', {'id':idee.id})}}">Modifier</a>
+                                        </div>
+                                        <div class="sep"></div>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+      
+        
+        
+
+    {% endfor %}
+    
+</div>
+    {%endblock%}
+
+

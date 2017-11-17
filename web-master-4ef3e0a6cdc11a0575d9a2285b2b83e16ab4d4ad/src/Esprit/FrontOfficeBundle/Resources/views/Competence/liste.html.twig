@@ -1,0 +1,39 @@
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+
+    <center><h1>Liste des Compétences Professionnelles</h1>
+
+
+    </center>
+    <center>
+        <table   class="features-table">
+            <thead>
+                <tr>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Modification</th>
+
+                    <th scope="col">Suppression</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for c in comps %}
+                    <tr>
+                        <td>{{c.categorie}}</td>
+                        <td>{{c.libelleCompetence}}</td>
+                        <td><a href="{{path('esprit_application_update_competence', {'id':c.id})}}">Modifier</a></td>
+                        <td><a href="{{path('esprit_application_delete_competence',{'id':c.id})}}">Supprimer</a></td>
+
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </center>
+
+{%endblock%}
+
+

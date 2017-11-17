@@ -1,0 +1,64 @@
+{%extends "EspritFrontOfficeBundle::ideeAllLayout.html.twig"%}
+{%block title %}Résultat de la recherche{%endblock%}
+{%block page %}Résultat de la recherche{%endblock%}
+
+{%block container %}
+
+        <div class="navigation">
+
+    {{ knp_pagination_render(entities) }}
+
+    
+    
+    
+    {% for idee in entities %}
+        
+        
+   <div class="grid_3">
+                            <div class="project-short sml-thumb">
+                                <div class="top-project-info">
+                                    <div class="content-info-short clearfix">
+        <a href="#" class="thumb-img">
+                                            <img src="{{asset('uploads/idee/'~idee.path)}}" id="img" alt="$TITLE">
+                                        </a>
+                                        <div class="wrap-short-detail">
+                                            <h3 class="rs acticle-title"><a class="be-fc-orange" href="{{path('esprit_application_oneidee_idee',{'id':idee.id})}}">{{idee.titre}}</a></h3>
+                                            <p class="rs tiny-desc">Type : <a href="#" class="fw-b fc-gray be-fc-orange">{{idee.type}}</a></p>
+                                            <p class="rs title-description">{{idee.description}}</p>
+                                            <p class="rs project-location">
+                                                <i class="icon iLocation"></i>
+                                                New York, NY
+                                            </p>
+                                        </div>
+        
+        </div>
+                                </div>
+                                <div class="bottom-project-info clearfix">
+                                    
+                                    <div class="group-fee clearfix">
+                                        <div class="fee-item">
+                                            <p class="rs lbl">Nombre de votes</p>
+                                            <span class="val">50%</span>
+                                        
+                                            <p class="rs lbl">Voter à cette idée</p>
+                                            <span class="val"></span>
+                                            {% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : idee.id*10000} %}
+                                        </div>
+                                        <div class="sep"></div>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+      
+        
+        
+
+    {% endfor %}
+    
+</div>
+    {%endblock%}
+
+

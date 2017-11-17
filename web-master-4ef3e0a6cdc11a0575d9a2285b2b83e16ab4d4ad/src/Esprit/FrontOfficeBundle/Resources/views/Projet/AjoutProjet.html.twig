@@ -1,0 +1,176 @@
+{% extends "EspritFrontOfficeBundle::layout1.html.twig" %}
+{%block content %}
+    
+    
+    {% if is_granted('ROLE_USER') %}
+
+ <ul>
+    <li class="current first">
+          <a href="{{ path('esprit_front_office_forum_homepage') }}">forum</a>
+    </li>
+    <li class="current_ancestor">
+        <a href="{{path('esprit_front_office_liste')}}">Project list</a>
+        <ul class="menu_level_1">
+            <li class="current first last">
+                <a href="{{path('esprit_front_office_liste')}}">Search Project</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+    <form  enctype="multipart/form-data" method='POST'>
+
+        <div class="project-tab-detail tabbable accordion" style="position:relative;
+             top:20px;
+             left:+90px ">
+            <ul class="nav nav-tabs clearfix" >
+                <li class="active"><a href="#"><h3 class="rs alternate-tab accordion-label" 
+                                                   > Projet</h3></a></li>
+            </ul>
+            <div class="tab-content">
+                <div>
+                    <h3 class="rs alternate-tab accordion-label"></h3>
+                    <div class="tab-pane accordion-content active" style="width: 50%">
+                        <div class="form form-profile">
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Titre*</label>
+                                <div class="val">
+
+                                    {{ form_widget(f.titre, { 'attr' : { 'class': 'txt' } } )  }}
+
+                                </div>
+                            </div>
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Description *</label>
+                                <div class="val">
+
+                                    {{form_widget (f.description,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div>    
+
+
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Type * </label>
+                                <div class="val">
+
+                                    {{form_widget (f.type,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div> 
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">duree*</label>
+                                <div class="val">
+
+                                    {{form_widget (f.duree,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div> 
+                            
+                            <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">budget *</label>
+                                <div class="val">
+
+                                    {{form_widget (f.budget,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                                     <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">categorie*</label>
+                                <div class="val">
+
+                                    {{form_widget (f.categorie,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div> 
+                                    
+                                    
+                                  <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Pays*</label>
+                                <div class="val">
+
+                                    {{form_widget (f.pays,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div> 
+                               <div class="row-item clearfix">
+                                <label class="lbl" for="txt_name1">Fichier*</label>
+                                <div class="val">
+
+                                    {{form_widget (f.file,{'attr':{'class' : 'txt'}  }) }}
+
+                                </div>
+                            </div>            
+                               
+                                      
+                            </div> 
+                                    
+                                 
+                                    
+                                    
+                                    
+                                    
+
+                                    <div class="wrap-btn-submit rs ta-r " >
+                               
+                                    {{form_widget (f.valider,{'attr':{'class' : 'btn btn-red btn-submit-all'}  }) }}
+                                    {{ form_row(f._token) }}
+                          
+                            </div>     
+
+
+
+
+                        </div>      
+                    </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <br>
+                <br>
+
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</form>
+                                    
+                                    {%else%}
+    <center>
+        <h2>Vous devez etre connecté pour pouvoir ajouter une idée.</h2>
+    <br> 
+    <a href="{{path('fos_user_security_login')}}"><h1>Connecter</h1></a>
+    <br>
+    <a href="{{path('fos_user_registration_register')}}"><h1>S'inscrire</h1></a>
+    </center>
+{%endif%}        
+{%endblock%}

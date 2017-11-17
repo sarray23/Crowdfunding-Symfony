@@ -1,0 +1,247 @@
+dcs_rating:
+    resource: "@DCSRatingBundle/Resources/config/routing.xml"
+    prefix:   /
+
+
+
+esprit_front_office_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritFrontOfficeBundle:Default:index }
+
+
+esprit_front_office_help:
+    path:     /help
+    defaults: { _controller: EspritFrontOfficeBundle:help:index }
+    
+    
+esprit_front_office_contact:
+    path:     /contact
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:contacterAdmin }
+
+esprit_ideeLayout:
+    path:     /idee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:test }
+
+
+esprit_application_afficher_idee:
+    path:     /ideeaff/
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:afficher }
+    
+
+esprit_application_rechercher_idee:
+    path:     /rech
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:rech }
+      
+esprit_application_add_idee:
+    path:     /addidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:ajout2 }    
+
+        
+esprit_application_type_idee:
+    path:     /typeidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:rechType }    
+                
+                
+esprit_application_mes_idee:
+    path:     /mesidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:afficher2 }  
+    
+esprit_application_tri_idee:
+    path:     /triidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:tri }  
+    
+esprit_application_vote_idee:
+    path:     /voteidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:tri }  
+    
+esprit_application_oneidee_idee:
+    path:     /oneidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:oneIdee } 
+    
+
+    
+esprit_application_update_idee:
+    path:     /up/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:update }
+    
+esprit_application_delete_idee:
+    path:     /del/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:delete }  
+    
+
+esprit_application_trivotedesc_idee:
+    path:     /descidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:triVoteDESC }   
+    
+
+esprit_application_trivoteasc_idee:
+    path:     /ascidee
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:triVoteASC }   
+    
+    
+esprit_application_list_expert:
+    path:     /experts
+    defaults: { _controller: EspritFrontOfficeBundle:Expert:list }   
+    
+    
+esprit_application_post_expert:
+    path:     /postuler/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:postuler }   
+    
+esprit_application_tri_expert_asc:
+    path:     /expertsasc
+    defaults: { _controller: EspritFrontOfficeBundle:Expert:listAsc }   
+    
+esprit_application_tri_expert_dsc:
+    path:     /expertsdsc
+    defaults: { _controller: EspritFrontOfficeBundle:Expert:listDsc }   
+    
+esprit_application_tri_expert:
+    path:     /triexpert
+    defaults: { _controller: EspritFrontOfficeBundle:Expert:listTri } 
+    
+esprit_application_mail:
+    path:     /mail/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Idee:contacter } 
+
+
+
+# reclamation (ahmed)
+esprit_ajout_reclamation:
+    path:     /ajoutrec
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:ajout }
+    
+esprit_list_reclamation:
+    path:     /listrec
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:list }
+
+esprit_list1_reclamation:
+    path:     /listrec1
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:list1 }
+    
+esprit_modifier_reclamation:
+    path:     /modifierrec/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:modifier }
+    
+esprit_supprimer_reclamation:
+    path:     /supprimerrec/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:supprimer }
+    
+esprit_rechercher_reclamation:
+    path:     /rechercherrec
+    defaults: { _controller: EspritFrontOfficeBundle:Reclamation:rechercher }
+    
+    
+    
+    
+#houssem
+
+#Probleme (C-R-U-D)
+esprit_application_probleme:
+    path:     /probleme/
+    defaults: { _controller: EspritFrontOfficeBundle:Probleme:probleme}
+esprit_application_listeprobleme:
+    path:     /lstprobleme/
+    defaults: { _controller: EspritFrontOfficeBundle:Probleme:listeprob}
+
+esprit_application_deleteprobleme:
+    path:     /deleteProb/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Probleme:delete}
+    
+esprit_application_updateprobleme:
+    path:     /updateProb/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Probleme:update}
+    
+    
+#ProblemeSolution 
+esprit_application_ProbSol:
+    path:     /listProbSol/
+    defaults: { _controller: EspritFrontOfficeBundle:ProblemeSolution:affich}
+esprit_application_ProbSoln:
+    path:     /listProbSol1/
+    defaults: { _controller: EspritFrontOfficeBundle:ProblemeSolution:affich1}
+
+esprit_application_SingleProb:
+    path:     /singleProbSol/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:ProblemeSolution:affichOne}
+    
+    
+    
+    
+#sourour
+
+
+#Competences
+esprit_application_ProfilExpert:
+    path:   /profilExpert
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:Competence }
+    
+#Funding
+esprit_application_funding:
+    path:   /funding/{idprojet}
+    defaults: { _controller: EspritFrontOfficeBundle:Financement:fund }
+    
+
+esprit_application_rech_parcomp:
+    path:     /usersByComp
+    defaults: { _controller: EspritFrontOfficeBundle:Competence:recherche }
+    
+    
+    
+#projet
+
+
+esprit_front_office_ajout:
+    path:     /Ajoutprojet/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:AjouterProjet }
+esprit_front_office_liste:
+    path:     /listeprojet/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:LiseProjet }
+ 
+    
+esprit_front_office_tableau:
+    path:     /tableauprojet/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:Lise1Projet }
+    
+esprit_front_office_delete:
+    path:     /deleteprojet{id}/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:Delete }
+esprit_front_office_update:
+    path:     /updateprojet{id}/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:Update }
+    
+    
+esprit_front_office_rechercheP:
+    path:     /Rechercheprojet/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:RechercheProjet }  
+    
+ 
+esprit_front_office_myProject:
+    path:     /myProjects/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:myProjets }  
+    
+    
+    
+    
+    
+esprit_front_office_detail:
+    path:     /detailP{id}/
+    defaults: { _controller: EspritFrontOfficeBundle:Projet:detailP }
+    
+
+
+esprit_front_office_forum_homepage:
+    path:     /addtopic
+    defaults: { _controller: EspritFrontOfficeBundle:Forum:addtopic }
+
+esprit_front_office_forum_homepage_topics:
+    path:     /homepageforum
+    defaults: { _controller: EspritFrontOfficeBundle:Forum:viewtopics }
+   
+esprit_front_office_forum_homepage_commenttopics:
+    path:     /comment/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Forum:viewtopic }
+    
+fesprit_front_office_orum_homepage_add_response:
+    path:     /comment2/{id}
+    defaults: { _controller: EspritFrontOfficeBundle:Forum:addcomment }

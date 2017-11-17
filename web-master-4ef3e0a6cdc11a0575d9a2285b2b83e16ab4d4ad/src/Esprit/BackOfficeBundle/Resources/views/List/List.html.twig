@@ -1,0 +1,39 @@
+{# empty Twig template #}
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+ <center>
+     <form method="POST">
+<input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Chercher un utilisateur" name="titre"/>
+     </form>
+<h2> La liste des utilisateurs </h2>
+
+<table  class="features-table">
+    <tr> 
+    <center>
+        
+    <th> <center>Photo</center></th>
+    <th> <center>Username</center></th>
+<th><center>Email</center></th>
+        
+<th><center>Suprimer</center></th>
+<th><center>Blocker</center></th>
+<th><center>Activer</center></th>
+    </center>
+    </tr>
+    {% for m in mds %}
+    <tr>
+       
+        <td><img src ="{{asset('uploads/users/'~m.path)}} "  width="80" height="70"alt=""  ></td>
+        <td><h5>{{m.username}}</h5></td>
+        <td>{{m.email}}</td>
+      
+        <td><a href="{{path('esprit_back_office_sup', {'id':m.id})}}"><img width="40" height="40"alt="" src="{{asset('images/sup.png')}}" alt="$TITLE"/> </a></td>
+        <td>    <a  href="{{path('esprit_back_office_block', {'id':m.id})}}"> <img width="40" height="40"alt="" src="{{asset('images/b.png')}}" alt="$TITLE"/></a></td>
+        <td>  <a  href="{{path('esprit_back_office_activer', {'id':m.id})}}"> <img width="40" height="40"alt="" src="{{asset('images/yes.png')}}" alt="$TITLE"/></a></td>
+        
+        
+    </tr>
+   
+    {% endfor %}
+    
+     {%endblock  %}

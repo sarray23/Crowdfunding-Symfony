@@ -1,0 +1,23 @@
+{%extends "EspritFrontOfficeBundle::oneProjet.html.twig"%}
+{%block titre %} {{idee.titre}} {%endblock%}
+{%block image %}<img class="img-desc" src="{{asset('uploads/projets/'~idee.path)}}" id="img1">{%endblock%}
+{%block imgp %}<img src="{{asset('uploads/users/'~user.path)}}" id="imgp" alt="$USER_NAME"/>{%endblock%}
+{%block username %} {{user.username}} {%endblock%}
+{%block email %} {{user.email}} {%endblock%}
+{%block tt %} {{idee.titre}} {%endblock%}
+{%block contacter %}{% if is_granted('ROLE_USER') %}
+ <a class="btn btn-red" href="{{path('esprit_application_funding',{'idprojet':idee.id})}}">Financer</a>{%endif%} {%endblock%}
+
+
+{%block container %}
+    
+    <h3>Catégorie</h3>{{idee.categorie}}
+    <h3>Canaouite</h3>{{idee.canaouite}}
+    <h3>Description</h3>   {{idee.description}}
+{%endblock%}
+
+
+{%block note %} {% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : user.id } %}{%endblock%}
+
+{%block type %}{{idee.type}}{%endblock%}
+    

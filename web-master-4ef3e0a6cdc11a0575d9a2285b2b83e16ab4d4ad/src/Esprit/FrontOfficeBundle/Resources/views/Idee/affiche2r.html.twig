@@ -1,0 +1,12 @@
+{%extends "EspritApplicationBundle::layout.html.twig"%}
+{%block container %}
+<center><h1><a href="{{path('esprit_application_idee_general')}}">Accueil des idées</a></h1></center>
+        <center>
+
+<form method="POST">
+    id Porteur De Projet : <input type="text" name="idPorteurDeProjet">
+    <input type="submit" value="rechercher">
+</form>
+                    </center>
+
+{%endblock%}{# empty Twig template #}

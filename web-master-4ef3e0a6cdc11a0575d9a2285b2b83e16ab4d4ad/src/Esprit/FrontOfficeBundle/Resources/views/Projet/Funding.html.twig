@@ -1,0 +1,42 @@
+{%extends "EspritFrontOfficeBundle::layout1.html.twig"%}
+{%block content %}
+    <form action="" method="POST">
+
+        <center>
+            <table align="center"> 
+
+               <!-- <tr> 
+                    <td>{{ form_label(f.Type) }}</td> 
+                    <td>{{ form_widget(f.Type) }}</td> 
+                </tr> -->
+               <td>Type     </td> 
+                    <td>DON </td>
+                <tr> 
+                    <td>Solde   </td> 
+                    <td>{{ (solde) }}</td> 
+                </tr>
+                <tr>
+                    <td>{{ form_label(f.Montant) }}</td> 
+                    <td>{{ form_widget(f.Montant) }}</td> 
+                </tr>
+
+            </table>
+
+{% for flashMessage in app.session.flashbag.get('notice') %}
+
+<div class="alert alert-danger">
+    <Font color="red" >
+    <B> {{ flashMessage }}</B>
+</Font>
+</div>
+
+{% endfor %}
+
+          
+            <br>
+           {{form_widget (f.valider,{'attr':{'class' : 'btn btn-red btn-submit-all'}  }) }}
+                                    {{ form_row(f._token) }}
+
+        </center>
+    </form>
+{%endblock%}

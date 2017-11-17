@@ -1,0 +1,40 @@
+{%extends "EspritBackOfficeBundle::layout.html.twig"%}
+{%block container %}
+ <center>
+
+<h1> La liste des réclamations  </h1>
+
+
+<table  class="features-table">
+    <tr> 
+    <center>
+         <th> <center>Photo</center></th>
+    <th> <center>Objet</center></th>
+    <th> <center>Description</center></th>
+<th><center>Date</center></th>
+        
+<th><center>Etat</center></th>
+<th><center>Porteur</center></th>
+        
+<th><center>Accepter</center></th>
+<th><center>Supprimer</center></th>
+    </center>
+    </tr>
+    {% for rec in reclamations%}
+    <tr>
+        <td>{% for user in users %}{% if user.id == rec.idP %}<img src ="{{asset('uploads/users/'~user.path)}} "  width="80" height="70"alt=""  >{% endif %}{%endfor%}</td>
+        <td>{{rec.objet}}</td>
+        <td><h5>{{rec.description}}</h5></td>
+        <td >{{rec.dateReclamation|date('d/m/Y')}}</td>
+      
+        <td>{{rec.etat}}</td>
+        <td>            {% for user in users%} {% if rec.idP == user.id %} {{user.username}} {%endif%}{%endfor%}</td>
+            <td><a href="{{path('esprit_back_office_accepter_reclamation',{'id' : rec.id})}}"><img width="40" height="40"alt="" src="{{asset('images/yes.png')}}" alt="$TITLE"/></a></td>
+        <td>                   <a href="{{path('esprit_back_office_supprimer_reclamation', {'id':rec.id})}}"><img width="40" height="40"alt="" src="{{asset('images/sup.png')}}" alt="$TITLE"/></a>
+</td>
+        
+    </tr>
+   
+    {% endfor %}
+    
+     {%endblock  %}

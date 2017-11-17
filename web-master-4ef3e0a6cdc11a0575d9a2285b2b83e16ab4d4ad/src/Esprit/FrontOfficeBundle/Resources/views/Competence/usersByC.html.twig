@@ -1,0 +1,51 @@
+{%extends "EspritFrontOfficeBundle::layout1.html.twig"%}
+{%block content %}
+    <link rel="stylesheet" href="{{asset('bundles/dcsrating/css/rating.css') }}" />
+
+    <center><h1>Liste des utilisateurs ayant une Compétence Professionnelle</h1> </center>
+    <form method="POST">
+        <input type="search" name="search" />
+        <input type="submit" value="rechercher" class="btn btn-red btn-submit-all" />
+
+        </br>
+        <div  class="tbl-header" >
+        <table border="2" width="150">
+            <tr>
+
+                <td>Pseudo</td>
+                <td>Email</td>
+                <td>Competences</td>
+                <td>Note</td> 
+            </tr>
+            {% for v in usr %}
+
+                <tr>
+                    
+                    <td>    {{ v.username }}     </td>
+                    <td>    {{ v.email }}     </td>
+                    <td>  
+                        {% for c in v.competences %}
+                            
+                            {% if c.libelleCompetence == s %}
+                                {{ c.libelleCompetence }}  ,  
+                            {% endif %}
+                            
+                        {% endfor %}
+                    </td>
+
+        <td>{% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : v.id } %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </form>
+
+    <center>
+        <span class='st_sharethis_large' displayText='ShareThis'></span>
+        <span class='st_facebook_large' displayText='Facebook'></span>
+        <span class='st_twitter_large' displayText='Tweet'></span>
+        <span class='st_linkedin_large' displayText='LinkedIn'></span>
+        <span class='st_pinterest_large' displayText='Pinterest'></span>
+        <span class='st_email_large' displayText='Email'></span>
+    </center>
+{%endblock%}

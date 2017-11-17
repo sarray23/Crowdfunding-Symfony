@@ -1,0 +1,93 @@
+.layout-2cols{
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.layout-2cols .content{
+    float: left;
+}
+.layout-2cols .sidebar{
+    float: left;
+}
+.layout-2cols.sidebar-left .content{
+    float: right;
+}
+.layout-1cols-ceneter{
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.layout-1cols-ceneter .content{
+    margin: 0 auto;
+    float: none;
+    display: block;
+}
+
+
+.media,
+.media-body {
+  overflow: hidden;
+  *overflow: visible;
+  zoom: 1;
+}
+.media > .thumb-left{
+    float: left;
+    margin-right:20px;
+    margin-top: 2px;
+}
+
+
+.form .row-item{
+    padding-bottom: 30px;
+}
+.form .row-item .lbl{
+    float: left;
+    padding-top: 7px;
+    width: 130px;
+    text-align: right;
+}
+.form .row-item .val{
+    margin-left: 140px;
+}
+.form .row-item .btn{
+    padding: 8px 16px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+
+
+.form .txt{
+    border: 1px solid #d9d9d9;
+    margin-bottom: 3px;
+    padding: 8px 10px;
+    background: #f9f9f9;
+    width:220px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+
+}
+.form .txt.fill-width{
+    width: 100%;
+}
+.form .txt:focus{
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}

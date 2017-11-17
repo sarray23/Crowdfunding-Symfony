@@ -1,0 +1,39 @@
+{%extends "EspritApplicationBundle::layout.html.twig"%}
+{%block container %}
+
+
+        <center>
+
+<table  id="tableau" border="1">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Noter</th>
+
+       
+    </tr>
+    </thead>
+  <tfoot>
+    <tr>
+      <td colspan="5">La liste de tous les experts</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    {% for expert in experts %}
+    <tr>
+        <td>{{expert.id}}</td>
+        <td><a href="{{path('esprit_application_aff_experts',{'id':expert.id})}}">Afficher ses infos</a></td>
+      
+        
+        
+    </tr>
+    
+    {% endfor %}
+    </tbody>
+</table>
+        </center>
+
+
+    {%endblock%}
+
+
